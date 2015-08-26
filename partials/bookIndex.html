@@ -12,7 +12,7 @@
 			<hr>
 			<ul>
 				<li ng-repeat="book in books">
-					<p ng-hide="book.editForm"><em><a ng-href="/#/books/{{book.id}}">{{book.title}}</a></em> by {{book.author}} &nbsp;
+					<p ng-hide="book.editForm"><em><a href="/#/books/{{book.id}}">{{book.title}}</a></em> by {{book.author}} &nbsp;
 						<a href="javascript:void(0)" ng-click="book.editForm = true">Edit</a>
 					</p>
 					<form name="editForm" ng-show="book.editForm" ng-submit="updateBook(book)">

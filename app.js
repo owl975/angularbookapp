@@ -43,16 +43,12 @@ angular.module('bookApp', ['ngRoute'])
   		};
 	}])
 
-  	.controller('BooksShowCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
-  		$scope.book = "This is the book";
-  		var bookId = $routeParams.id;
+    .controller('BooksShowCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+    $scope.book = "This is the book";
+    var bookId = $routeParams.id;
 
-  		$http.get('http://daretodiscover.herokuapp.com/books/' + bookId).
-  			then(function(response) {
-   			$scope.books = response.data;
-
-  			});
-  	}]);
-
-
-
+    $http.get('http://daretodiscover.herokuapp.com/books/' + bookId)
+      .then(function(response) {
+        $scope.book = response.data;
+      });
+  }]);
